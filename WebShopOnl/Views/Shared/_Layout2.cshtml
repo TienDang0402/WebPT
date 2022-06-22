@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/assets/client/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/client/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="~/assets/client/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/assets/client/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/assets/client/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/assets/client/css/main.css" rel="stylesheet" />
+    <script src="~/assets/client/js/jquery.min.js"></script>
+    <script src="~/assets/client/js/jquery-ui.js"></script>
+    <script src="~/assets/client/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/assets/client/js/popper.min.js"></script>
+    <script src="~/assets/client/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/assets/client/js/controller/cartController.js"></script>*@
+    <link href="~/assets/client/css/main.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="bUgRVhHM"></script>
+    <div id="wrapper">
+        <div id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+        <div id="header" class="border-bottom bg-white sticky-top">
+            <div class="container-xl ">
+                <nav class="navbar navbar-expand-md navbar-light" id="">
+                    <a href="@Url.Action("Index","Home")" class="navbar-brand">
+                        
+                        <img src="~/assets/client/images/logoo.jpg" alt="" />
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#main-menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="main-menu">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="/Home/Index" class="nav-link">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Product/Index" class="nav-link">Sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/News/Index" class="nav-link">Tin tức</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/AboutUs/Index" class="nav-link">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Contact/Index" class="nav-link">Liên hệ</a>
+                            </li>
+                        </ul>
+
+                        <!-- <input type="text" name="" id="" class="form-control"> -->
+                        <div class="hd-search">
+                            <button class="search"><i class="fas fa-search"></i></button>
+                            <form action="/Product/Search" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="keyword" id="txtKeyword" class="form-control" placeholder="tìm kiếm.....">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-danger" type="submit" id="button-addon2">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div class="account position-relative">
+                            <button class="user">
+                                <i class="fas fa-user"></i>
+                            </button>
+
+                            @{
+                                var session = (WebShopOnl.Common.UserLogin)Session[WebShopOnl.Common.ComonConstants.USER_SESSION];
+                            }
+                            @if (session == null)
+                            {
+                                <ul class="acc">
+                                    <li>
+                                        <a href="/User/Login">Đăng nhập</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/Register">Đăng ký</a>
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <ul class="acc">
+                                    <li>
+                                        <a href="/User/Login">@session.UserName</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/Logout">Thoát</a>
+                                    </li>
+                                </ul>
+                            }
+
+
+                        </div>
+
+
+                        @{ Html.RenderAction("HeaderCart", "Home");}
+
+
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+        <!-- Content -->
+
+        <div id="wp-content" class="container-xl my-5">
+
+            <!-- NEW PRODUCT -->
+
+            @RenderBody()
+
+        </div>
+
+        <!-- ----FOOTER----- -->
+
+
+        <div id="footer" class="mt-5">
+            <div class="container-xl pb-5">
+                <div class=" row row-cols-md-3 mt-5">
+                    <div class="col about-us">
+                        <div class="logo mb-2">
+                            <a href="Index.html">
+                                <img src="assets/images/Logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="address my-2">
+                            Địa chỉ: Đường số 21 Phường Long Thạnh Mỹ Thành phố Thủ Đức(Quận 9 cũ)
+                        </div>
+                        <div class="number-phone my-2">
+                            Số điện thoại: 094903490 - 08743294
+                        </div>
+                        <div class="email my-2">
+                            Email: quoctien04022001@gmail.com
+                        </div>
+                    </div>
+                    <div class="col linked">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="title">Liên kết nhanh</h5>
+                                <ul class="menu-footer">
+                                    <li>
+                                        <a href="">Chính sách bảo hành</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Chính sách thành viên</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="title">Danh mục</h5>
+                                <ul class="menu-footer">
+                                    <li>
+                                        <a href="@Url.Action("Index","Home")">Trang chủ</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Product")">Sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","News")">Tin tức</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","AboutUs")">Giới thiệu</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Contact")">Liên hệ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="fb-page" data-href="https://www.facebook.com/saonhapngu" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/saonhapngu" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saonhapngu">Sao nhập ngũ</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                autoplay: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var _val = $('html,body').scrollTop();
+                console.log(_val);
+                if (_val > 100) {
+                    $('#back-to-top').addClass('hien-backtop');
+                } else {
+                    $('#back-to-top').removeClass('hien-backtop');
+                }
+            });
+            $('#back-to-top').click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('button.search').click(function () {
+                $('button.search+form').fadeToggle(500);
+
+                return false;
+            });
+        });
+    </script>
+
+    <script src="~/assets/client/js/controller/baseController.js"></script>
+    @RenderSection("jsFooter", false);
+</body>
+
+</html>

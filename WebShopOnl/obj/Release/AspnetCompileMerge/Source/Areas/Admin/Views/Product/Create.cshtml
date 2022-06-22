@@ -1,0 +1,98 @@
+﻿@model WebShopOnl.Areas.Admin.Models.ProductImage
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+
+@section header{
+    Thêm mới người dùng
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Nhập thông tin sản phẩm.
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Name,"Tên sản phẩm", htmlAttributes: new { @class = "control-label col-md-3" })
+                                @Html.TextBoxFor(model => model.Product.Name, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Code,"Code", htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.TextBoxFor(model => model.Product.Code, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Product.Code, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Images,"Hình sản phẩm", htmlAttributes: new { @class = "control-label col-md-3" })
+                                <input type="file" name="ImageFile" required class="form-control" accept="image/*">
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Price,"Giá", htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.TextBoxFor(model => model.Product.Price, new { @class = "form-control"})
+                                @Html.ValidationMessageFor(model => model.Product.Price, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Quantity,"Số lượng", htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.TextBoxFor(model => model.Product.Quantity, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Product.Quantity, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.CategoryID, "Mã loại sản phẩm" ,htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                @Html.TextBoxFor(model => model.Product.CategoryID, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Product.CategoryID, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            @*<div class="form-group">
+                                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                                    @Html.CheckBoxFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+                            </div>*@
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Tạo mới" class="btn btn-danger" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<style>
+    .form-control {
+        width: 70%;
+    }
+</style>
+

@@ -1,0 +1,156 @@
+﻿@using Model.EF
+@using PagedList.Mvc
+@model PagedList.IPagedList<Product>
+
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    var listNewsProducts = (List<Model.EF.Product>)ViewBag.NewsProducts;
+    var listHotProducts = (List<Model.EF.Product>)ViewBag.HotProducts;
+
+}
+<style>
+    .product-item .product-img .product-actions a {
+        color: #fff;
+        border: none;
+        background: #ec2045;
+        padding: 5px 10px;
+        transition: all 0.3s;
+    }
+
+    .product-item:hover .product-img .product-actions {
+        bottom: 0px;
+    }
+
+    .product-item .product-img .product-actions a:hover {
+        transform: translateY(-10%);
+    }
+</style>
+
+
+
+<div class="hot-product box ">
+    <div class=" box-header my-5">
+        <div class="col-md-12 text-center">
+            <h3 class=" box-title font-weight-bold">
+                SẢN PHẨM HOT
+            </h3>
+            <div class="box-info">
+                <p class="text-muted">
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="owl-carousel owl-theme">
+
+            @foreach (var item in listHotProducts)
+            {
+                <div class="item">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="/Product/Detail/@item.ID">
+                                <img src="~/assets/client/images/@item.Images" alt="">
+                            </a>
+
+                            <div class="product-actions text-center">
+                                <a type="button" class="add-to-cart" href="/Cart/AddItem?productId=@item.ID&quantity=1">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                                <a href="/Product/Detail/@item.ID" class="detail" type="button">
+                                    <i class="fa fa-search-plus"></i>
+                                </a>
+                                <a href="/Product/Payment" class="buy-now" type="button">
+                                    <i class="fa fa-shopping-bag mr-2" ></i>Mua ngay
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-info text-center">
+                            <div class="product-title">
+                                <a href="">@item.Name</a>
+                            </div>
+
+                            <div class="product-price ">
+                                @(item.Price.GetValueOrDefault(0).ToString("N0") + "đ")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+
+<div class="new-product box ">
+    <div class=" box-header my-5">
+        <div class="col-md-12 text-center">
+            <h3 class=" box-title font-weight-bold">
+                SẢN PHẨM MỚI
+            </h3>
+            <div class="box-info">
+                <p class="text-muted">
+                   
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-body row row-cols-md-4 row-cols-2">
+
+        @{
+
+            foreach (var item in listNewsProducts)
+            {
+
+                <div class="col my-3">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="/Product/Detail/@item.ID">
+                                <img src="~/assets/client/images/@item.Images" alt="">
+                            </a>
+
+                            <div class="product-actions text-center">
+                                <a type="button" class="add-to-cart" href="/Cart/AddItem?productId=@item.ID&quantity=1">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                                <a href="/Product/Detail/@item.ID" class="detail" type="button">
+                                    <i class="fa fa-search-plus"></i>
+                                </a>
+                                <a href="/Product/Payment" class="buy-now" type="button">
+                                    <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-info text-center">
+                            <div class="product-title">
+                                <a href="">@item.Name</a>
+                            </div>
+
+                            <div class="product-price">
+                                @(item.Price.GetValueOrDefault(0).ToString("N0") + "đ")
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            }
+        }
+    </div>
+    
+    <div class="box-footer mt-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="" type="button" class="btn btn-outline-danger">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

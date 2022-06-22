@@ -1,0 +1,102 @@
+﻿@model List<WebShopOnl.Models.CartItem>
+@{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 inf-cart">
+        <div class="cart-title py-2">
+            <h3>Giỏ hàng</h3>
+        </div>
+        @{
+            decimal total = 0;
+            <div class="cart-body border-bottom border-secondery">
+
+                <table class="table table-responsive ">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Hình sản phẩm</th>
+                            <th style="width: 40%">Tên sản phẩm</th>
+                            <th style="width: 12%">Đơn giá</th>
+                            <th style="width: 15%">Số lượng</th>
+                            <th style="width: 13%">Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            var thanhtien = item.Quantity * item.Product.Price;
+                            total += (Decimal)thanhtien;
+                            <tr>
+                            <td class="">
+                                <a href="">
+                                    <img src="~/assets/client/images/@item.Product.Images" class="w-100" lt="">
+                                </a>
+
+                            </td>
+                            <td>
+                                <a href="">
+                                    <h6>@item.Product.Name</h6>
+                                    
+                                </a>
+                            </td>
+                            <td>
+                                <span>@(item.Product.Price.GetValueOrDefault(0).ToString("N0")+"đ")</span>
+                            </td>
+                            <td>
+                                
+                                <span>@item.Quantity</span>
+                            </td>
+                            <td>
+                                <span>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0")+"đ")</span>
+                            </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-footer justify-content-end d-flex mt-3">
+                <div>
+                    <div class="total-money mb-2">
+                        <span>Tổng tiền: </span>
+                        <span class="h4 text-danger">@(total.ToString("N0") + "đ")</span>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6 order">
+        <div class="py-2 border-bottom">
+            <h3>Thông tin khách hàng</h3>
+        </div>
+        <div class=" mt-3">
+            @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="shipName">Người nhận</label>
+
+                        <input type="text" name="shipName" id="shipName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Số điện thoại</label>
+                        <input type="text" name="mobile" id="mobile" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <input type="text" name="address" id="address" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Đặt hàng</button>
+                </div>
+            }
+            </div>
+        </div>
+</div>
+

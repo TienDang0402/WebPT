@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Model.EF.Product>
+
+
+<div class="hot-product box ">
+    <div class=" box-header my-5">
+        <div class="col-md-12 text-center">
+            <h3 class=" box-title font-weight-bold">
+                SẢN PHẨM HOT
+            </h3>
+            <div class="box-info">
+                <p class="text-muted">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, quisquam!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="owl-carousel owl-theme">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="~/assets/client/images/@item.Images" alt="">
+                            </a>
+
+                            <div class="product-actions text-center">
+                                <button class="add-to-cart">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                                <button class="detail">
+                                    <i class="fa fa-search-plus"></i>
+                                </button>
+                                <button class="buy-now">
+                                    <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info text-center">
+                            <div class="product-title">
+                                <a href="">@item.Name</a>
+                            </div>
+
+                            <div class="product-price ">
+                                @item.Price đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    
+</div>
+@*<div class="new-product box ">
+    <div class=" box-header my-5">
+        <div class="col-md-12 text-center">
+            <h3 class=" box-title font-weight-bold">
+                SẢN PHẨM MỚI
+            </h3>
+            <div class="box-info">
+                <p class="text-muted">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, quisquam!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-body row row-cols-md-4 row-cols-2">
+
+        @foreach (var item in Model)
+        {
+            <div class="col my-3">
+                <div class="product-item">
+                    <div class="product-img">
+                        <a href="#">
+                            <img src="~/assets/client/images/@item.Images" alt="">
+                        </a>
+
+                        <div class="product-actions text-center">
+                            <button class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="detail">
+                                <i class="fa fa-search-plus"></i>
+                            </button>
+                            <button class="buy-now">
+                                <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info text-center">
+                        <div class="product-title">
+                            <a href="">@item.Name</a>
+                        </div>
+
+                        <div class="product-price">
+                            @item.Price đ
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+    <div class="box-footer mt-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="" type="button" class="btn btn-outline-danger">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</div>*@

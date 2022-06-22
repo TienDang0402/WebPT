@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<style>
+    .product-item .product-img .product-actions a {
+        color: #fff;
+        border: none;
+        background: #ec2045;
+        padding: 5px 10px;
+        transition: all 0.3s;
+    }
+
+    .product-item:hover .product-img .product-actions {
+        bottom: 0px;
+    }
+
+    .product-item .product-img .product-actions a:hover {
+        transform: translateY(-10%);
+    }
+</style>
+
+
+<div class="row">
+    <!-- ---sidebar----- -->
+    <div class="col-md-3">
+        <div class="category">
+            <div class="category-title py-2 border-bottom border-muted">
+                Danh mục sản phẩm
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="panel">
+                @{ Html.RenderAction("ProductCategory", "Product");}
+            </div>
+        </div>
+        <div class="price-range">
+            <div class="price-range-title py-2 border-bottom border-muted">
+                Khoảng giá
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="panel">
+                <ul class="price-range-list">
+                    <li>
+                        <input type="radio" name="price-filter" id="0">
+                        <label for="0">Tất cả</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="100000">
+                        <label for="100000">Nhỏ hơn 100.000đ</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="100000-200000">
+                        <label for="100000-200000">Từ 100.000đ - 200.000đ</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="200000-300000">
+                        <label for="200000-300000">Từ 200.000đ - 300.000đ</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="300000-400000">
+                        <label for="300000-400000">Từ 300.000đ - 400.000đ</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="400000-500000">
+                        <label for="400000-500000">Từ 400.000đ - 500.000đ</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="price-filter" id="500000">
+                        <label for="500000">Lớn hơn 500.000đ</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 row">
+        <div class="product box w-100">
+            
+            @{ Html.RenderAction("ProductByTheme", "Product");}
+            
+        </div>
+
+    </div>
+</div>
+        <script>
+            $(document).ready(function () {
+                $('.category .category-title').click(function () {
+                    $('.category ul.category-list').slideToggle(1000);
+                    $('.category .arrow').toggleClass('active');
+                    return false;
+                });
+            });
+
+            $(document).ready(function () {
+                $('.price-range .price-range-title').click(function () {
+                    $('.price-range ul.price-range-list').slideToggle(1000);
+                    $('.price-range .arrow').toggleClass('active');
+                    return false;
+                });
+            });
+        </script>

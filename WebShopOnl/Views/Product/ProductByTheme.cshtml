@@ -1,0 +1,62 @@
+﻿@using Model.EF
+@model List<Model.EF.Product>
+
+
+
+@{ 
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+}
+<div class=" box-header p-2 d-flex justify-content-between">
+    <div class="box-header-title ">
+        <h4>@category.Name</h4>
+    </div>
+
+    <div class="sort">
+        <label for="sortby">Sắp xếp</label>
+        <select class="custom-select w-auto" id="sortby">
+            <option>Mới nhất</option>
+            <option>Sản phẩm bán chạy</option>
+            <option>Giá từ thấp đến cao</option>
+            <option>Giá từ cao xuống thấp</option>
+            <option>Theo bảng chữ cái</option>
+        </select>
+    </div>
+
+</div>
+<div class="box-body row row-cols-md-3">
+    @foreach (var item in Model)
+    {
+        <div class="col my-3">
+            <div class="product-item">
+                <div class="product-img">
+                    <a href="/Product/Detail/@item.ID">
+                        <img src="~/assets/client/images/@item.Images" alt="">
+                    </a>
+
+                    <div class="product-actions text-center">
+                        <a type="button" class="add-to-cart" href="/Cart/AddItem?productId=@item.ID&quantity=1">
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                        <a href="/Product/Detail/@item.ID" class="detail" type="button">
+                            <i class="fa fa-search-plus"></i>
+                        </a>
+                        <a href="/Product/Payment" class="buy-now" type="button">
+                            <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+                        </a>
+                    </div>
+                </div>
+                <div class="product-info text-center">
+                    <div class="product-title">
+                        <a href="">@item.Name</a>
+                    </div>
+
+                    <div class="product-price">
+                        @(item.Price.GetValueOrDefault(0).ToString("N0") + "đ")
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>

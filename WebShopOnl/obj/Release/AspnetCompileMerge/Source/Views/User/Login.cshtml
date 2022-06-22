@@ -1,0 +1,41 @@
+﻿@model WebShopOnl.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="mt-5 justify-content-center d-flex">
+    <div class="account-page login col-md-5 form-vertical text-center">
+        <div class="account-page-title py-2 mb-3 border-bottom" style="color: #4a4a4a;">
+            <h4>Đăng nhập</h4>
+        </div>
+        @using (Html.BeginForm("Login", "User", FormMethod.Post))
+        {
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+            //<input type="text" name="" id="" placeholder="Tài khoản" class="form-control my-1">
+
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control my-1", @autofocus = "autofocus", @placeholder = "Tài khoản" })
+            //<input type="password" name="" id="" placeholder="mật khẩu" class="form-control my-1">
+
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control my-1", @placeholder = "mật khẩu" })
+            <button class="btn btn-danger form-control my-1 mb-3" type="submit">Đăng nhập</button>
+        }
+
+        <p><a href="Index.html" class="text-danger">Trở về</a></p>
+        <p><a href="Registration.html" class="text-danger">Đăng ký</a></p>
+        <p><a href="" class="text-danger">Quên mật khẩu?</a></p>
+        <form action="">
+
+            <div class="form-row ">
+                <div class="col">
+                    <button class="form-control btn text-light" style="background: #3b5999;">Facebook</button>
+                </div>
+                <div class="col">
+                    <button class="form-control btn text-light" style="background: #dd4b39;">Google</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

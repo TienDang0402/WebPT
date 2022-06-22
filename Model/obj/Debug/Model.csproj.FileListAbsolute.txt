@@ -1,0 +1,80 @@
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\Model.dll.config
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\Model.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\Model.pdb
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\EntityFramework.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\EntityFramework.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\obj\Debug\Model.csproj.CopyComplete
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\obj\Debug\Model.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\obj\Debug\Model.pdb
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\PagedList.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\PagedList.Mvc.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\PagedList.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\WebShopOnl\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\Model.dll.config
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\Model.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\Model.pdb
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\PagedList.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\PagedList.xml
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\obj\Debug\Model.dll
+C:\Users\ADMIN\Downloads\Compressed\WebShopOnl\Model\obj\Debug\Model.pdb
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\Model.dll.config
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\Model.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\Model.pdb
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\EntityFramework.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\PagedList.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\PagedList.Mvc.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\EntityFramework.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\PagedList.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\bin\Debug\PagedList.Mvc.xml
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\obj\Debug\Model.csproj.CopyComplete
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\obj\Debug\Model.dll
+E:\TrungThanh\BaiTapLon\LapTrinhWeb\New folder (2)\Nhom02_N03\WebShopOnl\Model\obj\Debug\Model.pdb
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\Model.dll.config
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\Model.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\Model.pdb
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.xml
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.xml
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\obj\Debug\Model.dll
+C:\Users\ad\Downloads\WebBanHang\WebShopOnl\Model\obj\Debug\Model.pdb
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\Model.dll.config
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\Model.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\Model.pdb
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.Mvc.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.xml
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.xml
+E:\WEB\WebBanHang\WebShopOnl\Model\bin\Debug\PagedList.Mvc.xml
+E:\WEB\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+E:\WEB\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\WEB\WebBanHang\WebShopOnl\Model\obj\Debug\Model.csproj.CopyComplete
+E:\WEB\WebBanHang\WebShopOnl\Model\obj\Debug\Model.dll
+E:\WEB\WebBanHang\WebShopOnl\Model\obj\Debug\Model.pdb

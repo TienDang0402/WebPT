@@ -1,0 +1,14 @@
+﻿
+@model List<Model.EF.ProductCategory>
+
+<ul class="category-list">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("Index", "Product", new { @CategoryID = item.CategoryID })">
+                @item.Name
+            </a>
+        </li>
+    }
+    
+</ul>

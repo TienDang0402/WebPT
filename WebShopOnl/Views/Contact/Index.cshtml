@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@section jsFooter{
+
+    <script src="~/assets/client/js/controller/contactController.js"></script>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Thông tin liên hệ</h2>
+        <div class="address my-2">
+            Địa chỉ: Đường số 21 Phường Long Thạnh Mỹ Thành phố Thủ Đức(Quận 9 cũ)
+        </div>
+        <div class="number-phone my-2">
+            Số điện thoại:  094903490 - 08743294
+        </div>
+        <div class="email my-2">
+            Email: quoctien04022001@gmail.com
+        </div>
+
+
+        <h2>Gửi thông tin</h2>
+        <form>
+            <div class="form-group">
+                <label>Họ tên</label>
+                <input type="text" id="txtName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Điện thoại</label>
+                <input type="text" id="txtMobile" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input type="text" id="txtAddress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="txtEmail" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Nội dung đánh giá</label>
+                <textarea id="txtContent" class="form-control">
+
+                        </textarea>
+            </div>
+            <button id="btnSend" class="btn btn-success">Gửi đi</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <h2>Bản đồ liên hệ</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.6015951198533!2d106.82791521458964!3d10.841770092277205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317520c5fdeb3cfd%3A0x1031dd4358c0b083!2zMjAgxJAuIDIxLCBMb25nIFRo4bqhbmggTeG7uSwgUXXhuq1uIDksIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1654509706497!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>

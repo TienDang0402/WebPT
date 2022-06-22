@@ -1,0 +1,40 @@
+﻿@model List<Model.EF.OrderDetail>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+@{
+    var order = (Model.EF.Order)ViewBag.OrDetail;
+}
+@section header{
+    Chi tiết hóa đơn @order.OrderID - @order.ShipName
+}
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+
+                @*<th>Order ID</th>*@
+                <th>Mã sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    @*<td>@item.OrderID</td>*@
+                    <td>@item.ID</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

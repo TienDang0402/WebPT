@@ -1,0 +1,40 @@
+﻿@model List<Model.EF.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=162040475712588&autoLogAppEvents=1" nonce="ox20TUzC"></script>
+
+<div class="row">
+    <div class="col-md-3">
+        <h5 class="p-2 bg-danger text-white shadow">Danh mục tin tức</h5>
+        <div class="fb-page w-100" data-href="https://www.facebook.com/Choco.couplee/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Choco.couplee/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Choco.couplee/">Choco Couple</a></blockquote></div>
+        
+    </div>
+    <div class="col-md-9">
+        <div class="row row-cols-md-3 row-cols-1">
+            @foreach (var item in Model)
+            {
+                <div class="col my-3">
+                    <div class="artical-item text-center">
+                        <div class="artical-title p-2" style="height: 60px;">
+                            <a href="/News/Detail/@item.NewsID">
+                                <h5>@item.Name</h5>
+                            </a>
+                        </div>
+                        <div class="artical-img">
+                            <a href="/News/Detail/@item.NewsID">
+                                <img src="~/assets/client/images/@item.Images" alt="">
+                            </a>
+                        </div>
+                        <div class="artical-des p-2 text-muted">
+                            @item.Description
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

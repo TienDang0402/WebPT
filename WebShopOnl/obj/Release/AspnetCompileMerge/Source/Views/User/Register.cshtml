@@ -1,0 +1,65 @@
+﻿@model WebShopOnl.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="mt-5 justify-content-center d-flex">
+    <div class="account-page login col-md-5 form-vertical text-center">
+        <div class="account-page-title py-2 mb-3 border-bottom" style="color: #4a4a4a;">
+            <h4>Tạo tài khoản</h4>
+        </div>
+        @using (Html.BeginForm("Register", "User", FormMethod.Post))
+        {
+            @*@Html.AntiForgeryToken()*@
+            <div class="form-group">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                @if (ViewBag.Success != null)
+                {
+                    <div class="alert alert-success">@ViewBag.Success</div>}
+            </div>
+
+            //<input type="text" name="" id="" placeholder="Tên tk" class="form-control my-1">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control my-1", @placeholder = "Tài khoản" })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            
+            //<input type="email" name="" id="" placeholder="email" class="form-control my-1" required>
+
+
+            //<input type="password" name="" id="" placeholder="mật khẩu" class="form-control my-1" required>
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control my-1", @placeholder = "Mật khẩu"})
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            //xác nhận mk
+            @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control my-1", @placeholder = "Xác nhận mật khẩu" })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+            //họ tên
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control my-1", @placeholder = "Họ tên" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+
+            //Địa chỉ
+            @Html.TextAreaFor(model => model.Address, new { @class = "form-control my-1", @placeholder = "Địa chỉ" })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+            //Email
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control my-1", @placeholder = "Email", @type="email"})
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+            //sdt
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control my-1", @placeholder = "Số điện thoại" })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+
+            <button class="btn btn-danger form-control my-1 mb-3" type="submit">Đăng ký</button>
+        }
+
+
+        <p><a href="/User/Login" class="text-danger">Trở về</a></p>
+
+
+
+    </div>
+</div>
+

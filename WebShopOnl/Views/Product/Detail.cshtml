@@ -1,0 +1,296 @@
+﻿@model Model.EF.Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    var relatedProducts = (List<Model.EF.Product>)ViewBag.RelatedProducts;
+}
+<style>
+    .slider-img ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .slider-img h1 {
+        font-size: 35px;
+        padding: 20px 0px;
+        margin: 10px 0px;
+    }
+
+    .slider-img #show {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+        .slider-img #show img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .slider-img #wp-list-thumb ul#list-thumb li {
+        width: 60px;
+        height: auto;
+        float: left;
+        margin-right: 10px;
+    }
+
+        .slider-img #wp-list-thumb ul#list-thumb li:last-child {
+            margin-right: 0px;
+        }
+
+        .slider-img #wp-list-thumb ul#list-thumb li a img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slider-img #wp-list-thumb ul#list-thumb li.active-img {
+            border: 1px solid #ce7d7d;
+        }
+
+    .active-img {
+        border: 1px solid #ce7d7d;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        color: #fff;
+        background-color: #ec2045;
+        transform: rotate(0deg);
+    }
+
+    .tab-content > .active {
+        display: block;
+        transform: rotate(0deg);
+    }
+
+    .nav-pills .nav-link {
+        color: #4a4a4a;
+        border-radius: .25rem;
+    }
+
+    
+    .product-item .product-img .product-actions a {
+        color: #fff;
+        border: none;
+        background: #ec2045;
+        padding: 5px 10px;
+        transition: all 0.3s;
+    }
+
+    .product-item:hover .product-img .product-actions {
+        bottom: 0px;
+    }
+
+    .product-item .product-img .product-actions a:hover {
+        transform: translateY(-10%);
+    }
+
+</style>
+<div class="row">
+    <div class="col-md-4 slider-img">
+        <div id="wp-slider">
+            <div id="show">
+                <img src="~assets/client/images/@Model.Images" alt="">
+            </div>
+            <div id="wp-list-thumb">
+                <ul id="list-thumb">
+
+                    <li>
+                        <a href=""><img src="~/assets/client/images/@Model.Images" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="~/assets/client/images/@Model.Image2" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="~/assets/client/images/@Model.Image3" alt=""></a>
+                    </li>
+                   
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <h3 class="border-bottom pb-3">@Model.Name</h3>
+        <h4 class=" border-bottom py-3" style="color:  #ec2045;">@(Model.Price.GetValueOrDefault(0).ToString("N0")+"đ")</h4>
+        <div class="descrip py-3 border-bottom">
+            <p>Chất liệu: Cotton mềm mịn thấm hút mồ hôi - Màu sắc: Trắng phối xám - Phân loại: Nam, Set nữ - Size: Nữ S-M-L, Nam M-L-XL</p>
+        </div>
+       
+            <div class="input-group py-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary minus" type="button">-</button>
+                </div>
+                <input type="text" class="text-center" style="width: 15%" value="1">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary plus" type="button">+</button>
+                </div>
+            </div>
+
+            @*<a id="Add-cart" href="/Cart/AddItem?productId=@Model.ID&quantity=1" type="button" class="btn btn-danger">*@
+               <a id="Add-cart" href="@Url.Action("AddItem","Cart", new {@productId=Model.ID, @quantity=1,StrURL=Request.ToString()}) "type="button" class="btn btn-danger">
+                <i class="fas fa-cart-plus mr-2"></i> Thêm vào giỏ hàng
+            </a>
+            <a href="/Cart/Payment" type="button" class="btn btn-danger">
+                <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+            </a>
+        
+
+    </div>
+</div>
+
+<!-- END INF PRODUCT -->
+<div>
+
+</div>
+<div class="row mt-4">
+    <div class="col-3">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Hướng dẫn chọn size</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Hướng dẫn sử dụng</a>
+
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                <div class="size-table">
+                    
+                    <img src="~/assets/client/images/bangsize.jpg" alt=""/>
+                </div>
+                <h5>HƯỚNG DẪN ĐẶT HÀNG </h5>
+                Để đặt hàng sản phẩm trên website bạn làm theo hướng dẫn sau nha:
+
+                <p> Bước 1: Chọn kích thước, chọn giới tính "Nữ", chọn số lượng rồi thêm vào giỏ hàng</p>
+                <p>Bước 2: Chọn kích thước, chọn giới tính "Nam", chọn số lượng rồi thêm vào giỏ hàng </p>
+                <p>Bước 3: Check lại giỏ hàng và chọn "Tiến hành thanh toán" </p>
+                <p>- Điền đẩy đủ thông tin: tên người nhận, số điện thoại, địa chỉ cụ thể khi nhận hàng</p>
+                <p>- Bấm hoàn thành</p>
+                <p>Khi nhận sản phẩm cậu hãy kiểm tra thật kĩ sản phẩm các bạn nhé, nếu có vấn đề gì với sản phẩm hãy liên hệ lại với chúng tôi ngay nha. </p>
+                <h5>LIÊN HỆ CHĂM SÓC KHÁCH HÀNG</h5>
+                <p>
+                    Email: quoctien04022001@gmail.com
+                </p>
+                <p>Hotline : 094903490 - 08743294</p>
+
+                <p>Facebook :https://www.facebook.com/quoctien.422001/</p>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <p>- Cách giặt áo/quần/váy: Khi mới mua sản phẩm, giặt lần đầu với nước (không sử dụng bột giặt), nên giặt bằng tay giúp sản phẩm mềm hơn, tránh bị phai màu và sờn lông.</p>
+                <p>- Các lần giặt tiếp theo không nên đổ trực tiếp bột giặt lên quần áo, không nên ngâm quần áo trong xà phòng quá lâu. </p>
+                <p>- Cách treo và bảo quản quần áo: Đối với những sản phẩm có hình in không nên gấp 2 mặt in vào nhau giúp tránh bị dính và loang màu. </p>
+                <p>- Khi sử dụng bàn là nên lột trái, không để nhiệt độ bàn ủi quá cao</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- HOT PRODUCT -->
+
+<div class="hot-product box ">
+    <div class=" box-header my-5">
+        <div class="col-md-12 text-center">
+            <h3 class=" box-title font-weight-bold">
+                SẢN PHẨM LIÊN QUAN
+            </h3>
+            <div class="box-info">
+                <p class="text-muted">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="owl-carousel owl-theme">
+            @foreach (var item in relatedProducts)
+            {
+                <div class="item">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="/Product/Detail/@item.ID">
+                                <img src="~/assets/client/images/@item.Images" alt="">
+                            </a>
+
+                            <div class="product-actions text-center">                             
+                                <a type="button" class="add-to-cart" href="/Cart/AddItem?productId=@item.ID&quantity=1">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                                <a href="/Product/Detail/@item.ID" class="detail" type="button">
+                                    <i class="fa fa-search-plus"></i>
+                                </a>
+                                <a href="/Product/Payment" class="buy-now" type="button">
+                                    <i class="fa fa-shopping-bag mr-2"></i>Mua ngay
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-info text-center">
+                            <div class="product-title">
+                                <a href="">@item.Name</a>
+                            </div>
+
+                            <div class="product-price ">
+                                @(item.Price.GetValueOrDefault(0).ToString("N0") + "đ")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+        $(document).ready(function() {
+                var src_img;
+                var src_img_first = $("#list-thumb li:first-child a img").attr('src');
+
+            $(".slider-img #show img").attr('src', src_img_first);
+            $('.slider-img #list-thumb li:first-child').addClass('active-img');
+
+            $(".slider-img #list-thumb li a").click(function() {
+                    src_img = $(this).children('img').attr('src');
+
+                $(".slider-img #show img").attr('src', src_img);
+
+                $('.slider-img #list-thumb li a').parent('li').removeClass('active-img');
+                $(this).parent('li').addClass('active-img');
+                    return false;
+                });
+            });
+</script>
+
+<script>
+        $(document).ready(function() {
+            var quantity = 0;
+            $('.input-group-prepend button.minus').click(function() {
+                quantity = $('input').val();
+                quantity--;
+                if (quantity < 1)
+                    quantity = 1;
+                $('input').val(quantity);
+
+                $('a#Add-cart').attr('href', '/Cart/AddItem?productId=@Model.ID&quantity=' + quantity);
+                return false;
+            });
+
+            $('.input-group-append button.plus').click(function() {
+                quantity = $('input').val();
+                quantity++;
+
+                $('input').val(quantity);
+
+                $('a#Add-cart').attr('href', '/Cart/AddItem?productId=@Model.ID&quantity=' + quantity);
+                return false;
+            });
+        });
+</script>
+

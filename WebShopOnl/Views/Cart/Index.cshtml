@@ -1,0 +1,144 @@
+﻿
+@model List<WebShopOnl.Models.CartItem>
+
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+  
+<style>
+    .cart-body table a {
+        color: #ec2045;
+    }
+
+        .cart-body table a:hover {
+            text-decoration: none;
+        }
+</style>
+
+<div class="cart-title py-2">
+    <h3>Giỏ hàng</h3>
+</div>
+@if (Model.Count > 0)
+{
+    decimal total = 0;
+    <div class="cart-body border-bottom border-secondery">
+        <table class="table table-responsive ">
+            <thead>
+                <tr>
+                    <th style="width: 20%">Hình sản phẩm</th>
+                    <th style="width: 40%">Tên sản phẩm</th>
+                    <th style="width: 12%">Đơn giá</th>
+                    <th style="width: 15%">Số lượng</th>
+                    <th style="width: 13%">Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var thanhtien = item.Quantity * item.Product.Price;
+                    total += (Decimal)thanhtien;
+                    <tr>
+                        <td class="">
+                            <a href="">
+                                <img src="~/assets/client/images/@item.Product.Images" class="w-100" lt="">
+                            </a>
+
+                        </td>
+                        <td>
+                            <a href="#">
+                                <h4>@item.Product.Name</h4>
+                            </a>
+                        </td>
+                        <td>
+                            <h5>@(item.Product.Price.GetValueOrDefault(0).ToString("N0") + "đ")</h5>
+                        </td>
+                        <td>
+                            <div class="input-group" id="product-@item.Product.ID">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary minus" type="button">-</button>
+                                </div>
+                                <input type="text" class="text-center txtQuantity" style="width: 30%" value="@item.Quantity" data-id="@item.Product.ID">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary plus" type="button">+</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h5>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0")+"đ")</h5>
+                        </td>
+                        <td>
+                            <a href="#" class="mt-1 btn-delete" data-id="@item.Product.ID">Xóa</a>
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="cart-footer justify-content-end d-flex mt-3">
+        <div>
+            <div class="total-money mb-2">
+                <span>Tổng tiền: </span>
+                <span class="h4">@(total.ToString("N0") + "đ")</span>
+            </div>
+            <button class="btn btn-danger" id="btnUpdate" type="submit">Cập nhật</button>
+            <button class="btn btn-danger" id="btnPayment" type="submit">Thanh toán</button>
+            
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="cart-body border-bottom border-secondery">
+        <div class="alert alert-danger">Hình như bạn chưa có sản phẩm nào?</div>
+    </div>
+    <div class="cart-footer justify-content-end d-flex mt-3">
+        <div>
+            <div class="total-money mb-2">
+                <span>Tổng tiền: </span>
+                <span class="h4">0đ</span>
+            </div>
+            
+        </div>
+    </div>
+}
+@foreach (var item in Model)
+{
+<script>
+        $(document).ready(function () {
+            var quantity = 0;
+            $('#product-@item.Product.ID .input-group-prepend button.minus').click(function () {
+                quantity = $('#product-@item.Product.ID input').val();
+                quantity--;
+                if (quantity < 1) {
+                    if (confirm('Bạn có muốn xóa sản phẩm nàyy?')) {
+                        $('.btn-delete').trigger('click');
+                    } else {
+                        quantity = 1;
+                    }
+                    
+                }
+                    
+                $('#product-@item.Product.ID input').val(quantity);
+                return false;
+            });
+
+            $('#product-@item.Product.ID .input-group-append button.plus').click(function () {
+                quantity = $('#product-@item.Product.ID input').val();
+                quantity++;
+                
+                $('#product-@item.Product.ID input').val(quantity);
+                return false;
+            });
+        });
+</script>
+}
+
+
+@section jsFooter{
+    <script src="~/assets/client/js/controller/cartController.js"></script>
+}

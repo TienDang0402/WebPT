@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    font-size: 23px;
+    line-height: 23px;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 35px;
+    padding: 20px 0px;
+    margin: 10px 0px;
+}
+
+#show {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#show img {
+    max-width: 100%;
+    height: auto;
+}
+
+#wp-list-thumb ul#list-thumb li {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+#wp-list-thumb ul#list-thumb li:last-child {
+    margin-right: 0px;
+}
+
+#wp-list-thumb ul#list-thumb li a img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#wp-list-thumb ul#list-thumb li.active {
+    border: 1px solid #333333;
+}
